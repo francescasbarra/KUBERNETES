@@ -20,3 +20,4 @@
    13  kubectl delete pod lian -n francesca
    14  k get pod -n francesca
 
+kubectl config set-context --current --namespace=<nome-namespace>  #to change current namespace
