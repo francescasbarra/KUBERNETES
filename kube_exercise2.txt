@@ -1,0 +1,56 @@
+root@ubuntu:~# k get po
+NAME                     READY   STATUS    RESTARTS   AGE
+chance-955d8c785-cp9qs   1/1     Running   0          5m52s
+chance-955d8c785-gtxtv   1/1     Running   0          5m50s
+chance-955d8c785-k4zzg   1/1     Running   0          5m56s
+
+
+root@ubuntu:~# k exec -it chance-955d8c785-cp9qs -- bash  #TO ENTER INTO THE POD
+
+root@ubuntu:~# k get po
+NAME                     READY   STATUS    RESTARTS   AGE
+chance-955d8c785-cp9qs   1/1     Running   0          5m52s
+chance-955d8c785-gtxtv   1/1     Running   0          5m50s
+chance-955d8c785-k4zzg   1/1     Running   0          5m56s
+root@ubuntu:~# k exec -it chance-955d8c785-cp9qs -- bash
+
+
+root@chance-955d8c785-cp9qs:/usr/local/apache2# find / -type f -name index.html
+
+oot@chance-955d8c785-cp9qs:/usr/local/apache2# echo "Ciao" > /usr/local/apache2/htdocs/index.html
+root@chance-955d8c785-cp9qs:/usr/local/apache2# cat /usr/local/apache2/htdocs/index.html
+Ciao
+root@chance-955d8c785-cp9qs:/usr/local/apache2# exit
+exit
+root@ubuntu:~# k get pod
+NAME                     READY   STATUS    RESTARTS   AGE
+chance-955d8c785-cp9qs   1/1     Running   0          15m
+chance-955d8c785-gtxtv   1/1     Running   0          15m
+chance-955d8c785-k4zzg   1/1     Running   0          15m
+root@ubuntu:~# k get pod -o wide
+NAME                     READY   STATUS    RESTARTS   AGE   IP                NODE       NOMINATED NODE   READINESS GATES
+chance-955d8c785-cp9qs   1/1     Running   0          15m   192.168.243.209   ubuntu     <none>           <none>
+chance-955d8c785-gtxtv   1/1     Running   0          15m   192.168.226.83    worker-1   <none>           <none>
+chance-955d8c785-k4zzg   1/1     Running   0          15m   192.168.226.82    worker-1   <none>           <none>
+root@ubuntu:~# curl 192.168.243.209:80
+Ciao
+root@ubuntu:~# curl 192.168.226.83:80
+<html><body><h1>It works!</h1></body></html>
+root@ubuntu:~# curl 192.168.226.82:80
+<html><body><h1>It works!</h1></body></html>
+root@ubuntu:~# k get service
+NAME     TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+chance   NodePort   10.100.126.136   <none>        80:30936/TCP   14m
+root@ubuntu:~# curl 10.100.126.136:80
+Ciao
+root@ubuntu:~# curl 10.100.126.136:80
+Ciao
+root@ubuntu:~# curl 10.100.126.136:80
+<html><body><h1>It works!</h1></body></html>
+root@ubuntu:~# curl 10.100.126.136:80
+<html><body><h1>It works!</h1></body></html>
+root@ubuntu:~# curl 10.100.126.136:80
+<html><body><h1>It works!</h1></body></html>
+root@ubuntu:~# curl 10.100.126.136:80
+Ciao
+
