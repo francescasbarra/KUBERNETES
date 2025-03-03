@@ -1,27 +1,9 @@
-  1  > /etc/apt/sources.list.d/kubernetes.list
-    2  cd /etc/apt/sources.list.d/
-    3  ll
-    4  rm kubernetes.list
-    5  ll
-    6  rm *
-    7  ll
-    8  rm /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-    9  ll
-   10  apt update
-   11  ll
-   12  cd ..
-   13  òò
-   14  ll
-   15  cd keyrings/
-   16  ll
-   17  cd ..
-   18  ll
-   19  k get pod
-   20  kubectl get pod
-   21  vim .bashrc
-   22  source .bash
-   23  source .bashrc
-   24  k get namespace
+
+
+   1  kubectl get pod  #to show the list of pods
+   2  kubectl get pod
+   3 
+   4  k get namespace
    25  kubectl create namespace francesca
    26  k get namespace
    27  k get ns
