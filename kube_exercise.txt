@@ -42,6 +42,9 @@ chance-955d8c785-gtxtv   1/1     Running   0          67s
 chance-955d8c785-k4zzg   1/1     Running   0          73s
 
 
+kubectl get pod -o wide  #TO SHOW MORE DETAILED INFO
+
+
 root@ubuntu:~# kubectl expose deployment chance --type NodePort --port 80  #TO EXPOSE THE PORT TO THE EXTERNAL
 service/chance exposed
 
