@@ -1,17 +1,22 @@
 
 
    1  kubectl get pod  #to show the list of pods
-   2  kubectl get pod
+   2  kubectl run pod.name --image nginx  #to create a pod
    3 
-   4  k get namespace
-   25  kubectl create namespace francesca
-   26  k get namespace
-   27  k get ns
-   28  k get pod
-   29  k get pod -n francesca
-   30  kubectl run lian --image nginx -n francesca
-   31  k get pod -n francesca
-   32  kubectl delete pod lian
-   33  kubectl delete pod lian -n francesca
-   34  k get pod -n francesca
+   4  kubectl get namespace  #to show namespaces
+   5  kubectl create namespace francesca  #to create namespace
+   6  kubectl get namespace
+   7  kubectl get ns
+   8  k get pod
+   9  k get pod -n francesca
+  
+
+   
+#to create and show pod in other namespace
+
+   10  kubectl run lian --image nginx -n francesca
+   11  k get pod -n francesca
+   12  kubectl delete pod lian
+   13  kubectl delete pod lian -n francesca
+   14  k get pod -n francesca
 
