@@ -5,12 +5,14 @@
    3 
    4  kubectl get namespace  #to show namespaces
    5  kubectl create namespace francesca  #to create namespace
-   6  kubectl get namespace
+   
+
    7  kubectl get ns
    8  k get pod
    9  kubectl get pod -n francesca #to show the list of pods in a specific namespace 
   
  
+[200~kubectl config view | grep namespace
   
 
    10  kubectl run lian --image nginx -n francesca

@@ -1,0 +1,52 @@
+root@ubuntu:~# kubectl config set-context --current --namespace=default  #to enter in the default namespace
+
+root@ubuntu:~# kubectl config view | grep namespace
+namespace: default  #to show in which namespace I am
+
+
+root@ubuntu:~# kubectl create namespace claudio  #TO CREATE A NEW NAMESPACE
+namespace/claudio created
+
+root@ubuntu:~# kubectl config set-context --current --namespace=claudio   #TO ENTER IN THE NEW NAMESPACE
+Context "kubernetes-admin@kubernetes" modified.
+
+root@ubuntu:~# kubectl config view | grep namespace
+    namespace: claudio
+
+
+root@ubuntu:~# kubectl create deploy chance --image nginx --replicas=3  #TO CREATE A DEPLOYMENT AND REPLICASET
+deployment.apps/chance created
+
+root@ubuntu:~# kubectl get pod
+NAME                      READY   STATUS    RESTARTS   AGE
+chance-5559c6dfc7-2x8fx   1/1     Running   0          13s
+chance-5559c6dfc7-d9brn   1/1     Running   0          13s
+chance-5559c6dfc7-p5hqj   1/1     Running   0          13s
+
+root@ubuntu:~# kubectl get replicaset  #TO SHOW REPLICASET
+NAME                DESIRED   CURRENT   READY   AGE
+chance-5559c6dfc7   3         3         3       55s
+
+
+root@ubuntu:~# kubectl edit deploy chance 
+deployment.apps/chance edited
+
+root@ubuntu:~# kubectl get replicaset
+NAME                DESIRED   CURRENT   READY   AGE
+chance-5559c6dfc7   0         0         0       2m24s
+chance-955d8c785    3         3         3       19s
+root@ubuntu:~# kubectl get pod
+NAME                     READY   STATUS    RESTARTS   AGE
+chance-955d8c785-cp9qs   1/1     Running   0          69s
+chance-955d8c785-gtxtv   1/1     Running   0          67s
+chance-955d8c785-k4zzg   1/1     Running   0          73s
+
+
+root@ubuntu:~# kubectl expose deployment chance --type NodePort --port 80  #TO EXPOSE THE PORT TO THE EXTERNAL
+service/chance exposed
+
+root@ubuntu:~# kubectl get service   #TO SHOW SERVICE INFO (NodePort service)
+NAME     TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+chance   NodePort   10.100.126.136   <none>        80:30936/TCP   10s
+
+
