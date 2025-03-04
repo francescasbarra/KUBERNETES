@@ -24,4 +24,4 @@
 kubectl config set-context --current --namespace=<nome-namespace>  #to change current namespace
 
 TO CREATE A POD ALSO:
-kubectl create -f pod.yml ????
+kubectl create -f pod.yml ???? con file configurazione pod yml
