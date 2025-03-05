@@ -25,6 +25,10 @@ Kubernetes architettura
 
 2 NODI
 
+sono le macchine dove vengono eseguiti i container gestiti dal cluster. Un cluster può avere qualsiasi numero di nodi.
+Comunicano con il control plane
+
+
 
 
 
