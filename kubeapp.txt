@@ -1,8 +1,15 @@
 
+POD
 
-   1  kubectl get pod  #to show the list of pods
-   2  kubectl run pod.name --image nginx  #to create a pod
-   3 
+     kubectl get pod  #to show the list of pods
+     kubectl run pod.name --image nginx  #to create a pod
+    
+NAMESPACE
+
+   kubectl get pod --namespace  namespace.name  #to show pod in a specific namespace
+   kubectl get pod --all-namespaces   #to show all the pods in all the namespaces
+   
+
    4  kubectl get namespace  #to show namespaces
    5  kubectl create namespace francesca  #to create namespace
    
