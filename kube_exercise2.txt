@@ -1,11 +1,11 @@
-root@ubuntu:~# k get po
+root@ubuntu:~# k get pod
 NAME                     READY   STATUS    RESTARTS   AGE
 chance-955d8c785-cp9qs   1/1     Running   0          5m52s
 chance-955d8c785-gtxtv   1/1     Running   0          5m50s
 chance-955d8c785-k4zzg   1/1     Running   0          5m56s
 
 
-root@ubuntu:~# k exec -it chance-955d8c785-cp9qs -- bash  #TO ENTER INTO THE POD
+root@ubuntu:~# k exec -it chance-955d8c785-cp9qs -- bash  #TO ENTER INTO THE POD Important 
 
 root@ubuntu:~# k get po
 NAME                     READY   STATUS    RESTARTS   AGE
