@@ -1,3 +1,5 @@
+NAMESPACE
+
 root@ubuntu:~# kubectl config set-context --current --namespace=default  #to enter in the default namespace
 
 root@ubuntu:~# kubectl config view | grep namespace
@@ -13,6 +15,9 @@ Context "kubernetes-admin@kubernetes" modified.
 root@ubuntu:~# kubectl config view | grep namespace
     namespace: claudio
 
+-------------------------------------------
+
+DEPLOYMENT 
 
 root@ubuntu:~# kubectl create deploy chance --image nginx --replicas=3  #TO CREATE A DEPLOYMENT AND REPLICASET
 deployment.apps/chance created
@@ -41,9 +46,11 @@ chance-955d8c785-cp9qs   1/1     Running   0          69s
 chance-955d8c785-gtxtv   1/1     Running   0          67s
 chance-955d8c785-k4zzg   1/1     Running   0          73s
 
+-----------------------------------
 
 root@ubuntu kubectl get pod -o wide  #TO SHOW MORE DETAILED INFO
 
+EXPOSITION
 
 root@ubuntu:~# kubectl expose deployment chance --type NodePort --port 80  #TO EXPOSE THE PORT TO THE EXTERNAL
 service/chance exposed
