@@ -13,8 +13,22 @@ Si occupa di distribuire il carico di lavoro, sostituire container che smettono 
 -----------------
 
 DEPLOYMENT  gestisce il ciclo di vita dei pod, crea e gestisce pod (contenitore, iniseme di container)
-            avvia e gestisce container. definisce come un'app deve essere eseguita/gestita automaticamente nei container.
+            avvia e gestisce container.
+            Oggetto che definisce come un'app deve essere eseguita/gestita automaticamente nei container.
 
+
+Un Deployment in Kubernetes permette di:
+
+ Avviare e gestire container in modo controllato.
+ Aggiornare un'applicazione senza downtime (rolling updates).
+ Ripristinare automaticamente una versione precedente in caso di problemi (rollback).
+ Scalare l'applicazione aumentando o diminuendo il numero di istanze.
+
+
+Kubernetes usa il Deployment per creare e gestire i Pod (insiemi di container), garantendo che ci sia sempre il numero desiderato di istanze attive.
+
+In pratica, invece di avviare manualmente i container, con un Deployment si definisce uno stato desiderato e Kubernetes si occupa di mantenerlo attivo e funzionante.
+        
 
 SCHEDULING DEI POD in base a spazio/risorse decide di inserire un container in un pod specifico
 
