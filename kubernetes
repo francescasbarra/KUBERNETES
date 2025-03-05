@@ -1,0 +1,34 @@
+KUBERNETES (K8s) piattaforma open source per l' orchestrazione dei container, tool di gestione dei container
+
+Orchestrazione, gestione del ciclo di vita dei container
+
+Important 
+Compito principale gestire automaticamente il deployment, il bilanciamento del carico, scalabilità e affidabilità delle app in esecuzione all'interno dei container.
+
+In pratica, Kubernetes ti permette di eseguire applicazioni su più server 
+senza doverti preoccupare di avviarle manualmente, 
+assegnare risorse o riavviarle in caso di errori. 
+Si occupa di distribuire il carico di lavoro, sostituire container che smettono di funzionare e gestire la comunicazione tra di loro.
+
+-----------------
+
+DEPLOYMENT  gestisce il ciclo di vita dei pod, crea e gestisce pod (contenitore, iniseme di container)
+            avvia e gestisce container. definisce come un'app deve essere eseguita/gestita automaticamente nei container.
+
+
+SCHEDULING DEI POD in base a spazio/risorse decide di inserire un container in un pod specifico
+
+--------------------
+
+SCOPI KUBERNETES
+
+1 CONTAINER ORCHESTRATION
+  Scopo primario: gestire dinamicamente container su più server
+
+2 AFFIDABILITà DELLE APPLICAZIONI k8s fornisce diverse funzionalità per l'affidabilità delle applicazioni (self-healing...)
+
+3 AUTOMAZIONE k8s offre funzionalità che permettono di automatizzare la gestione delle container app
+
+-------------------
+
+
