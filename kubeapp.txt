@@ -15,7 +15,7 @@
    kubectl config view | grep namespace  #to verify in which namespace you are
   
 
-   10  kubectl run lian --image nginx -n francesca
+   10  kubectl run lian --image nginx -n francesca  #to create a pod in another namespace
    11  k get pod -n francesca
    12  kubectl delete pod lian
    13  kubectl delete pod lian -n francesca
