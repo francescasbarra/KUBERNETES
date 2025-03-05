@@ -7,7 +7,7 @@ POD
 NAMESPACE
 
    kubectl get pod --namespace  namespace.name  #to show pod in a specific namespace
-   kubectl get pod --all-namespaces   #to show all the pods in all the namespaces
+   kubectl get pod --all-namespaces             #to show all the pods in all the namespaces
    
 
    4  kubectl get namespace  #to show namespaces
