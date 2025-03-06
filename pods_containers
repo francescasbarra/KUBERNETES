@@ -6,3 +6,8 @@ ConfigMaps : objects used for non sensitive information
 
 
 Secret : objects used for sensitive information (password, username, etc)
+
+
+--------------------
+
+
