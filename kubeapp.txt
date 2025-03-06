@@ -4,7 +4,10 @@ POD
      kubectl get pod  #to show the list of pods
      kubectl run pod.name --image nginx  #to create a pod
      
-     to create a POD you can also use a yaml file: vi pod.yaml Important 
+     to create a POD you can also use a yaml file:  vi pod.yaml Important 
+     after creating the file run:                   kubectl apply -f pod.yaml
+
+
 
 NAMESPACE
 
