@@ -34,7 +34,7 @@ kubectl delete    #to delete an object from a cluster
 
 kubectl exec      #to run commands inside containers
                  
-                  kubectl exec pod_name -c container_name -- command
+                  kubectl exec pod_name -c container_name -- command  (for pods with multiple container use -c to specify the container)
                   
                   also es. kubectl exec -it pod_name -- bash
 
