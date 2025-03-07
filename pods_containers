@@ -27,7 +27,7 @@ yaml data
 example 
 
 apiVersion: v1
-kind: ConfigMap
+kind: ConfigMap  IMPORTANT
 metadata:
   name: my-configmap
 data:
@@ -48,8 +48,28 @@ Important
 SECRET are similar to COnfigMaps but are designed to store sensitive data, such as passwords or API keys, more securely.
        They are created and used similarly to ConfigMaps
 
+apiVersion: v1
+kind: Secret  IMPORTANT
+metadata:
+  name: my-secret
+type: Opaque
+data:
+  username: user
+  password: mypass
 
 
+
+-------------------
+
+IMPORTANT HOW TO PASS THESE DATA TO THE CONTAINER?
+
+2 ways:
+
+1 you can pass them as ENVIRONMENT VARIABLES, these variables will be visible to your container process at runtime
+
+2 they can passed to containers in the form of mounted volumes. The configuration data will appear in files available to the container file system
+
+-------------------
 
 
 
