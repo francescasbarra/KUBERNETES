@@ -2,6 +2,15 @@
 PODS AND CONTAINER OVERVIEW
 
 
+
+APPLICATION CONFIGURATION
+when you are running application in K8s, you may want to pass dynamic values to your applications at runtime to control how the behave.
+This is know as Application Configuration.
+
+
+2 primary ways to store configuration data in K8s:
+
+
 ConfigMaps : objects used for non sensitive information
 
 
@@ -10,8 +19,29 @@ Secret : objects used for sensitive configuration information (password, usernam
 
 --------------------
 
-APPLICATION CONFIGURATION 
-when you are running application in K8s, you may want to pas dynamic values to your applications at runtime to control how the behave.
-This is know as Application Configuration.
+Important 
+CONFIGMAPS store data in the form of a key-value map and you can pass these data to your container application
+
+yaml data
+
+example 
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-configmap
+data:
+  key1: value1
+  key2: value2
+  key3:
+    subkey:
+      morekeys: data
+      evenmore: some more data
+  key4: |
+    You can also do
+    multi-line
+    data.
+
+--------------------
 
 
