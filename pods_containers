@@ -44,4 +44,21 @@ data:
 
 --------------------
 
+Important
+SECRET are similar to COnfigMaps but are designed to store sensitive data, such as passwords or API keys, more securely.
+       They are created and used similarly to ConfigMaps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
