@@ -5,9 +5,13 @@ PODS AND CONTAINER OVERVIEW
 ConfigMaps : objects used for non sensitive information
 
 
-Secret : objects used for sensitive information (password, username, etc)
+Secret : objects used for sensitive configuration information (password, username, etc)
 
 
 --------------------
+
+APPLICATION CONFIGURATION 
+when you are running application in K8s, you may want to pas dynamic values to your applications at runtime to control how the behave.
+This is know as Application Configuration.
 
 
