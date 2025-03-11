@@ -58,7 +58,7 @@ data:
   password: mypass
 
 
-base64 
+Important when we create a secret we have to base64 encode
 
 
 -------------------
