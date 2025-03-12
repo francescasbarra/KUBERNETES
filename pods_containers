@@ -71,7 +71,9 @@ IMPORTANT HOW TO PASS THESE DATA TO THE CONTAINER?
 
 -------------------
 
+Kubectl get configmaps
 
+kubectl get secret
 
 
 
