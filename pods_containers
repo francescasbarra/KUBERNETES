@@ -2,7 +2,6 @@
 PODS AND CONTAINER 
 
 
-
 APPLICATION CONFIGURATION
 when you are running application in K8s, you may want to pass dynamic values to your applications at runtime to control how the behave.
 This is know as Application Configuration.
@@ -59,7 +58,6 @@ data:
 
 
 Important when we create a secret we have to base64 encode
-
 
 -------------------
 
