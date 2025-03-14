@@ -7,7 +7,7 @@ Creating yaml files and then creating the objects using kubectl create/apply
 
 IMPERATIVE commands
 Define objects using kubectl commands and flags.
-It is faster
+it is faster
 example kubectl create deployment my-deploy --image=nginx
 
 --------
@@ -22,5 +22,11 @@ kubectl create deployment my-deploy --image=nginx --dry-run -o yaml
 
 --------
 
+RECORD A COMMAND	
+use the --record flag to record the command that was used to make a change, for a later review
 
+
+
+example
+kubectl scale deployment my-deploy replicas=5 --record
 
