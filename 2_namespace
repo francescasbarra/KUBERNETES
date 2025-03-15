@@ -19,3 +19,6 @@ KUBEADM also creates a kube-system namespace for system components
 
 # kubectl create namespace my-namespace     #to create a namespace
 
+# kubectl get pods --all-namespaces         #to list all pods in all namespaces
+
+

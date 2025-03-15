@@ -1,0 +1,11 @@
+# KUBECTL command line tools that allows you to interact with kubernetes
+
+# KUBEADM tool for quickly and easily creating kubernetes cluster
+
+# MINIKUBE similar to kubeadm, it allows to automatically to set up a local single-node kubernetes cluster.
+           
+#HELM provides templating and package management for k(s object.
+      you can use it to manage your own templates (known as charts)
+      you can also download and use shared templates
+
+
