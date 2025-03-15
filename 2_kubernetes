@@ -49,3 +49,5 @@ important
 KUBERNETES CLUSTER insieme di server che contengono container
                    kubernetes crea un livello astratto  che contiene tutti i pod dei server 
                    kubernetes si occupa di eseguire/gestire container automaticamente
+
+K8S CLUSTER > SERVER > POD > CONTAINER

@@ -1,0 +1,21 @@
+#Namespace funzionalità che permette di creare ambienti isolati
+
+they are vitual cluster backed by the same physical cluster.
+K8s objects such as pod and containers live in namespace.
+#NAMESPACES are a way to separate and organize objects in the cluster
+           
+they don't interact with each other
+useful if you have lots of different applications running in your cluster or if you have multiple different teams that are using your cluster
+
+# kubectl get namespaces  #to list namespaces
+
+all clusters have a default namespace, this is used when no other namespace is specified
+
+KUBEADM also creates a kube-system namespace for system components
+
+# --namespace  (or -n) #to specify the namespace
+
+# kubectl get pod --namespace my-namespace  #to list pods in a specified namespace
+
+# kubectl create namespace my-namespace     #to create a namespace
+

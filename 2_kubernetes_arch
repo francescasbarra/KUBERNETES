@@ -28,6 +28,7 @@ Kubernetes architettura
 sono le macchine dove vengono eseguiti i container gestiti dal cluster. Un cluster può avere qualsiasi numero di nodi.
 Comunicano con il control plane
 
+Important 
 KUBELET è un componente fondamentale di Kubernetes, responsabile della gestione dei pod su un nodo. 
         È un agente che gira su ogni nodo del cluster e si occupa di assicurarsi che i container siano in esecuzione come previsto.
 
