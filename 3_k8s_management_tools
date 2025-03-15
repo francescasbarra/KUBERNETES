@@ -7,5 +7,11 @@
 #HELM provides templating and package management for k(s object.
       you can use it to manage your own templates (known as charts)
       you can also download and use shared templates
+you can turn your k8s object or the applications you are running in you cluster into templates
+
+#KOMPOSE helps you to translate Docker compose files into kubernetes objects, you can move your application to k8s easily with Kompose
+
+#KUSTOMIZE configuration management tools for managing k8s object configurations
+           it allown you to share and re-use templated configurations for k8s applications
 
 
