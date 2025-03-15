@@ -1,0 +1,27 @@
+#RBCA (ROLE-BASED ACCESS CONTROL)
+
+k8s non usa utenti, non li gestisce
+
+k8s delega autenticazione ad altri sistemi esterni
+
+
+certif client che ti fa collegare all api server
+cert identifica l utente specifico, ogni utente ha un certificato
+
+k8s ha dei ruoli specifici
+
+#RUOLO oggetto che prevede presenza di 2 concetti, verbo e risorse
+       VERBO quel che puoi fare (create, list, delete, ecc)
+       RISORSE risorse su cui puoi abblicare i verbi
+
+
+
+ruolo creato nel cluster e assegnato all'utente  (ROLL BINDING)
+BINDING permette di collegare ruolo ad un utente o service account in modo che si possano applicare det verbi a det oggetti in determinati namespaceo o a tutto il cluster
+
+se il ruolo vale in tutto il cluster:  ROLE = CLUSTER ROLE
+CLUSTER ROLE BINDING collgamento tra cluster role e utente
+
+se vale solo in un namespace = ROLE (collegamento detto role binding)
+
+
