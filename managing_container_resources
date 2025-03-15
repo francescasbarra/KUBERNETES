@@ -2,7 +2,7 @@ RESOURCE REQUESTS AND RESOURCE LIMITS
 
 
 RESOURCE REQUESTS allow you to define an amount of resources (such as CPU or memory) you expect a container to use.
-
+                  ammontare di cpu ram che si vuole venga allocata con certezza ai pod/che si richieda sia disponibile
 The KUBERNETES SCHEDULER  will use RESOURCE REQUESTS to avoid scheduling pods on nodes that don't have enough available resources.
 
 -tip- containers are allowed to use more or less resources than the requesrs resources.
