@@ -1,0 +1,48 @@
+RESOURCE REQUESTS AND RESOURCE LIMITS
+
+
+RESOURCE REQUESTS allow you to define an amount of resources (such as CPU or memory) you expect a container to use.
+
+The KUBERNETES SCHEDULER  will use RESOURCE REQUESTS to avoid scheduling pods on nodes that don't have enough available resources.
+
+-tip- containers are allowed to use more or less resources than the requesrs resources.
+      RESOURCE REQUESTS only affects scheduling
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      resources:
+        requests:
+          cpu: "250m"
+          memory: "128Mi"
+
+
+---------
+
+RESOURCE LIMITS to limit the amount of resource your containers can use
+
+The CONTAINER RUNTIME is responsible for enforcing these limits and different container runetimes do this differently
+
+-tip- some runtimes will enforce these limits by stopping container processes that attempt to use more than the allowed amount of resources
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  -name: busybox
+   image: busybix
+   resources:
+     limits:
+       cpu: "250m"
+       memory: "128i"
+
+
+--------
+ 

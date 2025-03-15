@@ -24,10 +24,12 @@ kubectl create deployment my-deploy --image=nginx --dry-run -o yaml
 
 RECORD A COMMAND	
 use the --record flag to record the command that was used to make a change, for a later review
-(once you use "kubectl describe" on the object that was changed you can see that command in the annotation)
+(once you use "kubectl describe" on the object that was changed you can see that command in the "annotations" parameter)
 
 example
 kubectl scale deployment my-deploy replicas=5 --record
+
+SCALE is used to change the number of replicas (pod)
 
 --------
 
