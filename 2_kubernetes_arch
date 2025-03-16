@@ -1,25 +1,24 @@
 
-Kubernetes architettura
+#Kubernetes architettura
 
-1 k8s CONTROL PLANE non solo master, + componenti, esegue e controlla cluster kubernetes
+#1 k8s CONTROL PLANE non solo master, + componenti, esegue e controlla cluster kubernetes
 
-2 k8s NODI worker
+#2 k8s NODI worker
 
-3 k8s CLUSTER insieme dei server che contengono i container/ livello astratto che contiene server, pod. container
+#3 k8s CLUSTER insieme dei server che contengono i container/ livello astratto che contiene server, pod. container
 
 ----------------------
 
 1 KUBERNETES CONTROL PLANE + COMPONENTI:
 
-- KUBE-API-SERVER interfaccia kub-api tra control plane e cluster
+- KUBE-API-SERVER interfaccia kub-api tra control plane e cluster, server centrale che gestisce kubernetes
 
-- ETCD archivio dati su stato cluster
+- ETCD archivio dati su stato cluster (database dei manifest degli oggetti k8s)
 
 - KUBE SCHEDULER seleziona in quale nodo del cluster eseguire un container in base alle risorse necessarie , assegna container a worker specifico
 
-- KUBE-CONTROLLER-MANAGER esegue diversi servizi in un singolo processo nel cluster
+- KUBE-CONTROLLER-MANAGER controlla lo stato di salute dei pods del cluster, garantisce lo stato desiderato di un oggetto che viene specificato in un manifest
 
-- CLOUD CONTROLELR MANAGER interfaccia tra kubernetes e piattaforme cloud
 
 ----------------------
 
