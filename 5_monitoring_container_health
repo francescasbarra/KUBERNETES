@@ -1,4 +1,48 @@
-MONITORING CONTAINER HEALTH WITH PROBES
+#MONITORING CONTAINER HEALTH WITH PROBES
+
+PROBES (SONDE) strumenti usati per raccogliere informazioni su un sistema, una rete o un servizio.
+       ad es in kubernetes: liveness e readiness probes per verificare se un'app e attiva e pronta a ricevere traffico
 
 
+#CONTAINER HEALTH
+k8s provides many features that allows you to build robust solutions, such as the ability to automatically restart unehealthy containers
 
+
+funzione, oggetto
+funzioni api (application program interface) tramite tra prog esterno e applicazione
+
+
+#liveness probes 
+per verificare se app sta bene, diciamo noi a k8s quale api (funzione) della nostra applicazione interrogare
+
+direttive (si scrivono nel manifest del pod)
+period seconds =ogni quanti secondi devo controllare lo stato dell app 
+failure treshold=dopo quanti fallimenti devo dichiarare fallita prima di riavviare l app
+initial delay seconds=quanto tempo devo aspettare prima di fare il primo controllo
+
+#readiness probes
+k8s interroga l app per sapere se l'app è pronta a ricevere traffico network
+
+funziona quando ci sono problemi
+
+#http get (curl url) dove risponde l applicazione
+
+o #exec che esegue comando nel container
+
+
+#startup probe
+per app che ci mettono molto tempo ad avviarsi
+failure treshold + alte e period seconds + lunghi
+controllo iniziale poi entra in gioco liveness probe (che sta sempre attiva e controlla se l app
+
+
+le probes si possono definire sul manifest dell'app
+
+
+cronjob > job > pod  job crea un pod, il pod fa quel che deve e poi va in stato exited
+
+deployment specifica uno stato desiderato e si assicura che 
+crea il replicaset e il pod che deve stare sempre in running
+
+restart policy
+ALWAYS sia se il pod dà risultato positivo o neg viene restartato, k8s fa ripartire il pod
