@@ -19,21 +19,23 @@ questo meccanismo si può personalizzare
 
 di default k8s considera un container down quando il processo del container si arresta
 
+esegue un comando nel container e se va a buon fine il container verrà considerato in salute, altrimenti "unhealthy"
+
 
 direttive (si scrivono nel manifest del pod)
-period seconds =ogni quanti secondi devo controllare lo stato dell app 
-failure treshold=dopo quanti fallimenti devo dichiarare fallita prima di riavviare l app
-initial delay seconds=quanto tempo devo aspettare prima di fare il primo controllo
+"period seconds" =ogni quanti secondi devo controllare lo stato dell app 
+failure threshold=dopo quanti fallimenti devo dichiarare fallita prima di riavviare l app
+"initial delay seconds"=quanto tempo devo aspettare prima di fare il primo controllo
 
 #READINESS PROBES
 k8s interroga l app per sapere se l'app è pronta a ricevere traffico network, richieste
 il traffico non viene inviato a un particolare pod finchè i suoi container non hanno passato il readiness check definito dalle readiness probes
-
+INDICA SE L'APP è PRONTA A RICEVERE TRAFFICO, SE FALLISCE, IL POD RESTA IN ESECUZIONE MA NON RICEVE RICHIESTE
 come startup probes sono in esecuzione durante l'avvio del processo 
 
 funziona quando ci sono problemi
 
-#http get (curl url) dove risponde l applicazione
+#http get (curl url) dove risponde l applicazione  "httpGet" http type probe to make an HTTP GET request
 
 o #exec che esegue comando nel container
 

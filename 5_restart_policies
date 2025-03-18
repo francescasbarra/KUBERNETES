@@ -1,0 +1,31 @@
+BUILDING SELF-HEALING PODS WITH RESTART POLICIES
+
+RESTAR POLICIES VALUES:
+
+#ALWAYS
+#ON FAILURE
+#NEVER
+
+
+Restart policies determinano cosa accadrà quando un container si arresta
+
+k8s can automatically restarts containers when they fail, "restart policies" allows you to customize this behavior by defining when you want a pod's container to be automatically restarted
+#restart policies are an important component of self-healing applications, which are automatically repaired when a problem arises
+
+#ALWAYS 
+the default restart policy. With this policy containers will always be restarted if they stopo, even if they completed sucesfully.
+Used for applications that should be always running
+
+#ON FAILURE
+this policy will restart containers ONLY if the container process exits with an error code or if a liveness probe determine it as unhealthy.
+Used for applications that need to run successfully and then stop, no need to run it again 
+
+#NEVER
+in this case pod's container will never be restarted even if they fail
+used for app that should run once and never be automatically restarted
+
+
+
+
+
+
