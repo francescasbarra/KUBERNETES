@@ -12,16 +12,24 @@ funzione, oggetto
 funzioni api (application program interface) tramite tra prog esterno e applicazione
 
 
-#liveness probes 
+#LIVENESS PROBES
 per verificare se app sta bene, diciamo noi a k8s quale api (funzione) della nostra applicazione interrogare
+permette di determinare automaticamente se un container è in buono stato di salute, se funziona correttamente
+questo meccanismo si può personalizzare
+
+di default k8s considera un container down quando il processo del container si arresta
+
 
 direttive (si scrivono nel manifest del pod)
 period seconds =ogni quanti secondi devo controllare lo stato dell app 
 failure treshold=dopo quanti fallimenti devo dichiarare fallita prima di riavviare l app
 initial delay seconds=quanto tempo devo aspettare prima di fare il primo controllo
 
-#readiness probes
-k8s interroga l app per sapere se l'app è pronta a ricevere traffico network
+#READINESS PROBES
+k8s interroga l app per sapere se l'app è pronta a ricevere traffico network, richieste
+il traffico non viene inviato a un particolare pod finchè i suoi container non hanno passato il readiness check definito dalle readiness probes
+
+come startup probes sono in esecuzione durante l'avvio del processo 
 
 funziona quando ci sono problemi
 
@@ -30,11 +38,17 @@ funziona quando ci sono problemi
 o #exec che esegue comando nel container
 
 
-#startup probe
+controlla se pod pronto 
+se è pronto viene considerato dal service che invia traffico
+
+
+
+#STARTUP PROBES
 per app che ci mettono molto tempo ad avviarsi
 failure treshold + alte e period seconds + lunghi
 controllo iniziale poi entra in gioco liveness probe (che sta sempre attiva e controlla se l app
 
+#sono simili alle liviness probes, mentre le liviness probes sono costantemente in esecuzione, startup probes sono eseguite solo  all'avvio del container e si arrestanno una volta che vanno a buon fine, usate per determinare quando l'applicazione si è avviata con successo
 
 le probes si possono definire sul manifest dell'app
 
@@ -46,3 +60,6 @@ crea il replicaset e il pod che deve stare sempre in running
 
 restart policy
 ALWAYS sia se il pod dà risultato positivo o neg viene restartato, k8s fa ripartire il pod
+
+
+
