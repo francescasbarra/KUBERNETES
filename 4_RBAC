@@ -1,4 +1,4 @@
-#RBCA (ROLE-BASED ACCESS CONTROL)
+#RBAC (ROLE-BASED ACCESS CONTROL)
 
 k8s non usa utenti, non li gestisce
 
@@ -12,16 +12,36 @@ k8s ha dei ruoli specifici
 
 #RUOLO oggetto che prevede presenza di 2 concetti, verbo e risorse
        VERBO quel che puoi fare (create, list, delete, ecc)
-       RISORSE risorse su cui puoi abblicare i verbi
+       RISORSE risorse su cui puoi applicare i verbi
 
 
 
 ruolo creato nel cluster e assegnato all'utente  (ROLL BINDING)
-BINDING permette di collegare ruolo ad un utente o service account in modo che si possano applicare det verbi a det oggetti in determinati namespaceo o a tutto il cluster
+BINDING permette di collegare ruolo ad un utente o service account in modo che si possano applicare det verbi a det oggetti in determinati namespace o a tutto il cluster
 
-se il ruolo vale in tutto il cluster:  ROLE = CLUSTER ROLE
+#se il ruolo vale in tutto il cluster:  ROLE = CLUSTER ROLE
 CLUSTER ROLE BINDING collgamento tra cluster role e utente
 
-se vale solo in un namespace = ROLE (collegamento detto role binding)
+#se vale solo in un namespace = ROLE (collegamento detto role binding)
 
+---------
+
+# RBAC allows you to control what user are allowed to do and access within your cluster
+
+ROLES and CLUSTER ROLES are k8s objects that define a set of permissions that determine what users can do in the cluster
+
+a "ROLE" defines permissions within a particular namespace. Permissions valid only for that specific namespace
+a "CLUSTER ROLE" define cluster-wide permissions not specific to a single namespace. Permission are valid for the whole cluster, not only for a namespace
+
+"RoleBinding" object that connect Roles to users
+"ClusterRoleBinding" that connect ClusterRoles to users
+
+
+#CLUSTER -----------------------
+#
+#Cluster Roles       Namespace
+  permission         #Role
+  permission         permission
+
+#--------------------------------
 
