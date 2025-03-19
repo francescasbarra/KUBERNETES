@@ -39,9 +39,15 @@ a "CLUSTER ROLE" define cluster-wide permissions not specific to a single namesp
 
 #CLUSTER -----------------------
 #
-#Cluster Roles       Namespace
-  permission         #Role
-  permission         permission
+#Cluster Roles        Namespace
+  permission          #Role
+  permission          permission
 
+
+ClusterRoleBinding    Rolebinding
+
+              USERS
 #--------------------------------
+
+
 

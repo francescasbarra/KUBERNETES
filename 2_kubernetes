@@ -51,3 +51,13 @@ KUBERNETES CLUSTER insieme di server che contengono container
                    kubernetes si occupa di eseguire/gestire container automaticamente
 
 K8S CLUSTER > SERVER > POD > CONTAINER
+
+
+#CLUSTER ---------------------------------
+
+#server      server      server     (NODI)
+container    container   container
+container    container   container
+container    container   container
+
+#-----------------------------------------

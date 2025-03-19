@@ -1,7 +1,7 @@
 
 #Kubernetes architettura
 
-#1 k8s CONTROL PLANE non solo master, + componenti, esegue e controlla cluster kubernetes
+#1 k 8s CONTROL PLANE non solo master, + componenti, esegue e controlla cluster kubernetes
 
 #2 k8s NODI worker
 
@@ -11,13 +11,17 @@
 
 1 KUBERNETES CONTROL PLANE + COMPONENTI:
 
-- KUBE-API-SERVER interfaccia kub-api tra control plane e cluster, server centrale che gestisce kubernetes
+-"KUBE-API-SERVER" interfaccia kub-api tra control plane e cluster, server centrale che gestisce kubernetes
+ "API" (Application Program Interface) interfaccia ke k8s usa per comunicare e gestire le risorse del cluster
+       funziona come un centro di controllo che riceve richieste, ogni volta che crei, modifichi, cancelli un oggetto k8s stai interagendo con k8s api
 
-- ETCD archivio dati su stato cluster (database dei manifest degli oggetti k8s)
 
-- KUBE SCHEDULER seleziona in quale nodo del cluster eseguire un container in base alle risorse necessarie , assegna container a worker specifico
 
-- KUBE-CONTROLLER-MANAGER controlla lo stato di salute dei pods del cluster, garantisce lo stato desiderato di un oggetto che viene specificato in un manifest
+- "ETCD" archivio dati su stato cluster (database dei manifest degli oggetti k8s)
+
+- "KUBE SCHEDULER" seleziona in quale nodo del cluster eseguire un container in base alle risorse necessarie , assegna container a worker specifico
+
+-"KUBE-CONTROLLER-MANAGER" controlla lo stato di salute dei pods del cluster, garantisce lo stato desiderato di un oggetto che viene specificato in un manifest
 
 
 ----------------------
@@ -29,7 +33,7 @@ Comunicano con il control plane
 
 Important 
 KUBELET è un componente fondamentale di Kubernetes, responsabile della gestione dei pod su un nodo. 
-        È un agente che gira su ogni nodo del cluster e si occupa di assicurarsi che i container siano in esecuzione come previsto.
+        È un AGENTE che gira su ogni nodo del cluster e si occupa di assicurarsi che i container siano in esecuzione come previsto.
 
 
 CONTAINER RUNTIME software responsabile di eseguire realmente i container sulla macchina (es containerd e Docker)
