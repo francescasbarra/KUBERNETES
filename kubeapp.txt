@@ -37,3 +37,27 @@ kubectl config set-context --current --namespace=<nome-namespace>  #to change cu
 
 TO CREATE A POD ALSO:
 kubectl create -f pod.yml ???? con file configurazione pod yml
+
+-------------
+
+# kubectl exec -it chance -- bash   #esegue un comando all'interno di un pod
+
+il comando apre una shell bash interattiva nel container all'interno del pod chance
+
+#kubectl 
+È lo strumento da riga di comando per interagire con un cluster Kubernetes.
+#exec 
+Esegue un comando in un container che è in esecuzione all'interno di un pod.
+#-it: 
+È una combinazione di due opzioni:
+-i  sta per "interactive", permettendo l'interazione con il container.
+-t sta per "tty", che crea un terminale virtuale per una migliore esperienza interattiva.
+#chance-pod.name: 
+È il nome del pod in cui si vuole eseguire il comando. In questo caso, il nome del pod è "chance-pod.name".
+# -- 
+È un separatore che indica che tutto ciò che segue deve essere trattato come il comando da eseguire nel container.
+#bash: 
+È il comando che si vuole eseguire nel container. In questo caso, si vuole avviare una shell bash interattiva all'interno del pod.
+
+
+
