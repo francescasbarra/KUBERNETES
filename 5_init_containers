@@ -1,1 +1,19 @@
-INIT CONTAINERS
+#INIT CONTAINERS 
+are containers that run once during startup process of a pod.
+A pod can have any number of init containers, each one run once to completion
+
+sono dei container speciali che vengono eseguiti prima del container principale del pod, servono per preparare l'ambiente di esecuzione
+
+usati per:
+preparare dati o configurazioni prima di avviare app principale
+aspettare che un servizio esterno sia pronto, come un database
+impostare permessi o scaricare file richiesti dall'app principale
+possono contenere e usare software non necessari al container principale, mantenendolo, così, + leggero
+
+
+il pod non avvia i container principali finchè gli init container non terminano con successo
+
+you can use an init container:
+to populate a shared volume with data
+to do startup tasks involving sensitive data outside the main containers
+to pause startup until an external resource becomes available
