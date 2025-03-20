@@ -1,11 +1,11 @@
-IMPERATIVE COMMANDS and DECLARATIVE METHOD
+#IMPERATIVE COMMANDS and DECLARATIVE METHOD
 
-DECLARATIVE method (the most used)
+#DECLARATIVE method (the most used)
 Define objects using data structures such as YAML or JSON
 Creating yaml files and then creating the objects using kubectl create/apply
  
 
-IMPERATIVE commands
+#IMPERATIVE commands
 Define objects using kubectl commands and flags.
 it is faster
 example kubectl create deployment my-deploy --image=nginx

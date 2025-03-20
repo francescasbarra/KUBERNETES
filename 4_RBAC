@@ -28,7 +28,7 @@ CLUSTER ROLE BINDING collgamento tra cluster role e utente
 
 # RBAC allows you to control what user are allowed to do and access within your cluster
 
-ROLES and CLUSTER ROLES are k8s objects that define a set of permissions that determine what users can do in the cluster
+#ROLES and CLUSTER ROLES are k8s objects that define a set of permissions that determine what users can do in the cluster
 
 a "ROLE" defines permissions within a particular namespace. Permissions valid only for that specific namespace
 a "CLUSTER ROLE" define cluster-wide permissions not specific to a single namespace. Permission are valid for the whole cluster, not only for a namespace
