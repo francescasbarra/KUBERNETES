@@ -1,42 +1,44 @@
 
-KUBECTL is the command line tool that allows you to interact with Kubernetes.
+#KUBECTL is the command line tool that allows you to interact with Kubernetes.
 
 
 
-kubectl get    #to list objects in the kubernetes custer, es kubectl get pod
+#kubectl get    #to list objects in the kubernetes custer, es kubectl get pod
  
-               kubectl get pod -o wide #for more info  -o set the output format (-o output)
+                kubectl get pod -o wide #for more info  -o set the output format (-o output)
 
 
-kubectl describe    #to get detailed information about a kubernetes object    
+#kubectl describe    #to get detailed information about a kubernetes object    
 
-                    kubectl describe object_type object_name
-
-
+                     kubectl describe object_type object_name
 
 
-kubectl create  #to create object es yaml file
+
+
+#kubectl create  #to create object
+
+         es. kubectl create namespace namespace.name
+         es. from yaml file  kubectl create -f file_name.yaml
+
+
+#kubectl apply     #similar to create but if you use it with an existing object you can modify it 
+                   you can use it to create or modify an object
+
+                   kubectl apply -f file_name
+
+
+#kubectl delete    #to delete an object from a cluster
                   
-                kubectl create -f file_name
-
-
-kubectl apply     #similar to create but if you use it with an existing object you can modify it 
-                  you can use it to create or modify an object
-
-                  kubectl apply -f file_name
-
-
-kubectl delete    #to delete an object from a cluster
-                  
-                  kubectl delete object_type object_name
+                   kubectl delete object_type object_name
 
 
 
-kubectl exec      #to run commands inside containers
+#kubectl exec      #to run commands inside containers
                  
-                  kubectl exec pod_name -c container_name -- command  (for pods with multiple container use -c to specify the container)
+                   kubectl exec pod_name -c container_name -- command  (for pods with multiple container use -c to specify the container)
                   
-                  also es. kubectl exec -it pod_name -- bash
-
+                   also es. kubectl exec -it pod_name -- bash
+                    
+                   -- indica che ciò che segue deve essere eseguito come comando
 
 
