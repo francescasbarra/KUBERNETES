@@ -15,22 +15,21 @@ NAMESPACE
    kubectl get pod --all-namespaces             #to show all the pods in all the namespaces
    
 
-   4  kubectl get namespace  #to show namespaces
-   5  kubectl create namespace francesca  #to create namespace
+   kubectl get namespace  #to show namespaces
+   kubectl create namespace francesca  #to create namespace
    
 
-   7  kubectl get ns
-   8  k get pod
-   9  kubectl get pod -n francesca #to show the list of pods in a specific namespace 
+   kubectl get ns
+   kubectl get pod -n francesca #to show the list of pods in a specific namespace 
   
  
    kubectl config view | grep namespace  #to verify in which namespace you are
   
 
-   10  kubectl run lian --image nginx -n francesca  #to create a pod in another namespace
-   11  k get pod -n francesca
-   12  kubectl delete pod lian
-   13  kubectl delete pod lian -n francesca
+   kubectl run lian --image nginx -n francesca  #to create a pod in another namespace
+
+   kubectl delete pod lian
+   kubectl delete pod lian -n francesca
    
 
 kubectl config set-context --current --namespace=<nome-namespace>  #to change current namespace
