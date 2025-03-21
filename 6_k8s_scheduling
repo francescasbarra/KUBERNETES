@@ -1,0 +1,39 @@
+EXPLORING KUBERNETES SCHEDULING
+
+#SCHEDULING  process of  assigning pods to nodes so that "kubelet" can run them
+
+#SCHEDULER control plane component that handles scheduling
+
+SCHEDULING PROCESS
+The K8s Scheduler selects a suitable node for each pod.
+It takes in account things like:
+
+-resource requests  vs.available node resources
+-various configurations that affect scheduling using node labels
+
+
+#nodeSelector
+you can configure a "nodeSelector" for your pods to limit which Nodes the Pod can be scheduled on.
+
+Node selectors use node labels to filter suitable nodes
+
+example
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+# nodeSelector:
+#   mylabel: myvalue
+
+
+#nodeName
+you can bypass scheduling and assign a pod to a specific node by name using "nodeName"
+
+#nodeName: worker1
+
+
+
