@@ -24,7 +24,7 @@ esegue un comando nel container e se va a buon fine il container verrà consider
 
 direttive (si scrivono nel manifest del pod)
 "period seconds" =ogni quanti secondi devo controllare lo stato dell app 
-failure threshold=dopo quanti fallimenti devo dichiarare fallita prima di riavviare l app
+failure threshold (soglia di fallimento) =dopo quanti fallimenti devo dichiarare fallita prima di riavviare l app
 "initial delay seconds"=quanto tempo devo aspettare prima di fare il primo controllo
 
 #READINESS PROBES

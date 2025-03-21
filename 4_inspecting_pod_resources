@@ -1,0 +1,23 @@
+INSPECTING POD RESOURCES
+
+# KUBERNETES METRICS SERVER
+
+add-on, programmino che consente di verificare quante risorse (cpu, ram) usano container e pod.
+
+es. kubectl apply -f https://raw.githubusercontent.com/linuxacademy/content-cka-resources/master/metrics-server-components.yaml
+    serviceaccount/metrics-server created
+
+
+
+
+# kubectl top  
+  per verificare dati sull'uso delle risorse in pod e nodi
+  supporta l'uso delle opzioni --sort-by e --selector
+
+
+es.
+  kubectl top pod --sort-by <JSONPATH> --selector <selectors>
+  kubectl top pod --sort-by cpu
+
+  kubectl top node
+
