@@ -15,7 +15,7 @@ It takes in account things like:
 #nodeSelector
 you can configure a "nodeSelector" for your pods to limit which Nodes the Pod can be scheduled on.
 
-Node selectors use node labels to filter suitable nodes
+Node selectors use "node labels" to filter suitable nodes
 
 example
 apiVersion: v1
