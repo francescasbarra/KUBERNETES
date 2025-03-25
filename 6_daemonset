@@ -1,0 +1,40 @@
+#DAEMONSET / daemonset pod
+
+è un oggetto che esegue in automatico una copia di un Pod su ogni nodo
+
+#essenzialmente Pod con funzioni/servizi di sistema, usati per eseguire servizi di sistema che devono essere presenti su tutti i nodi (es. monitoraggio, networking, storage)
+
+esegue una copia del Pod sui nuovi nodi aggiunti al cluster
+
+#daemonset and scheduling
+
+daemonSets respect normale scheduling rules around node labels, taints and tolerations.
+If a pod is not  normally scheduled on a node, daemonset will not create a copy of the pod on that node
+
+# taint è un'etichetta applicata a un nodo per impedire che gli vengano schedulati alcuni pod
+  kubectl taint nodes nodo1 key=value:NoSchedule
+
+es.
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-daemonset
+spec:
+  selector:
+    matchLabels:      
+      app: my-daemonset
+#any pods with this label are going to be picked up and considered to be managed by this daemonset
+  template:
+#pod template that's going to be used to create those pods on each worker nodes          
+    metadata:
+      labels: 
+        app: my-daemonset
+    spec:
+      container:
+      - name: nginx
+        image: nginx
+
+
+#QUESTO DAEMONSET CREERà UN POD SU OGNUNO DEI WORKER NODE, NEL MIO CASO 2 IN QUANTO HO 2 WORKER NODE - SUL MASTER NO PERCHè HA IL TAINT CHE IMPEDISCI DI AGGIUNGERE QUESTI POD
+

@@ -36,4 +36,10 @@ you can bypass scheduling and assign a pod to a specific node by name using "nod
 #nodeName: worker1
 
 
+-----------------------
 
+IMPORTANT we have to use default labels of the nodes or we can also assign a new label
+
+# kubect label nodes  #to assign a new label to the node
+
+kubectl label nodes node.name special=true  (special=true is the label
