@@ -1,5 +1,7 @@
 #DAEMONSET / daemonset pod
 
+fa partire un pod in ogni nodo 
+
 è un oggetto che esegue in automatico una copia di un Pod su ogni nodo
 
 #essenzialmente Pod con funzioni/servizi di sistema, usati per eseguire servizi di sistema che devono essere presenti su tutti i nodi (es. monitoraggio, networking, storage)
@@ -36,5 +38,22 @@ spec:
         image: nginx
 
 
+kubectl get daemonset
+NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+my-daemonset   2         2         2       2            2           <none>          112s
+
+
 #QUESTO DAEMONSET CREERà UN POD SU OGNUNO DEI WORKER NODE, NEL MIO CASO 2 IN QUANTO HO 2 WORKER NODE - SUL MASTER NO PERCHè HA IL TAINT CHE IMPEDISCI DI AGGIUNGERE QUESTI POD
+
+
+#differenze tra deployment e daemonset
+
+"deployment"
+-scala i pod su nodi diversi in base alle repliche desiderate, demonset ne fa partire uno per ogni nodo
+-utile per applicazioni con bilanciamento del carico
+
+"daemonset"
+-fa girare un pod su ogni nodo
+-utile per servizi di sistema
+
 

@@ -1,0 +1,39 @@
+# STATIC PODS AND MIRROR PODS
+
+# STATIC POD
+is a pod managed directly by kubelet on a node, not by the k8s api server
+(they can run even if there is no k8s api server present, without being instructed by it)
+even without a control plane
+
+kubelet crea pod statici da manifest yaml locati in the manifest path on the node
+        c'è uno specifico path di file sul nodo worker
+        # di default il path è /etc/kubernetes/manifests/
+        # es. /etc/kubernetes/manifests/my-static-pod.yaml
+
+sono semplici pod, la differenza è che si trovano in un path specifico
+quindi si creano nei nodi worker 
+
+#kubelet vede quella directory e il file e crea in automatico il pod statico
+#
+#se non voglio attendere eseguo il comando per restartare kubelet = systemctl restart kubelet
+
+se eseguo k get pod trovo il pod appena creato ma non posso cambiarlo/gestirlo (è il mirror pod?)
+se provo a cancellarlo risulterà ancora il pod ma in pending (non + in running). #è stato cancellato il mirror pod
+eseguendo di nuovo k get pod ritorna in running lo static pod ma non posso modificarlo
+
+
+
+#MIRROR PODS
+
+kubelet crea un mirror pod per ogni static pod che rappresenta il pod statico  nel k8s api
+
+consente di vedere e  verificare lo stato del pod statico attraverso la k8s api, ma non si può cambiare o gestire via api
+
+
+static quando vuoi assegnare direttamente un pod su un nodo (in modo statico)
+kubectl gli dà come nome file+node
+
+utile se voglio che gestisce kubelet
+#per avere pod stabili, + blindati possibili, non modificabili
+
+

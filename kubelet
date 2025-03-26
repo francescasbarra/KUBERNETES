@@ -1,0 +1,34 @@
+#Kubelet è l'agent principale di kubernetes che gira su ogni nodo (master o worker)
+
+Gestisce il ciclo di vita dei pod: riceve le specifiche dei pod dal controllo centrale (API server) e si assicura che i container siano creati, monitorati e mantenuti in esecuzione.
+
+Interagisce con il runtime container (es. containerd) per creare, avviare, fermare i container.
+
+Monitora lo stato dei pod e dei container, e invia informazioni di health/status al control plane.
+
+Applica le specifiche del pod, come:
+
+Volume mounts
+
+Network namespace
+
+ConfigMap e Secret
+
+Readiness/Liveness probes
+
+#agente del nodo
+prog installato sul nodo
+
+si occupa di far creare i pod da "containerd", si assicura che i container vengano creati, monitorati, gestiti e invia info al master
+
+
+
+#La differenza principale tra kubelet e Kubernetes API Server sta nel loro ruolo all'interno di un cluster Kubernetes:
+
+Kubelet: è un agente che gira su ogni nodo del cluster e si occupa di gestire i pod in esecuzione su quel nodo. Riceve istruzioni dall'API Server e si assicura che i container siano avviati, mantenuti in esecuzione e riavviati in caso di problemi.
+
+Kubernetes API Server: è il componente centrale del control plane che funge da interfaccia per l'intero cluster. Gestisce le richieste provenienti dagli utenti, dagli strumenti di automazione e dagli altri componenti del cluster (come il kubelet). È responsabile della validazione e dell’elaborazione delle operazioni su oggetti come pod, servizi e deployment.
+
+In sintesi:
+Kubelet → gestisce i container sui nodi.
+API Server → gestisce l’intero cluster ed è il punto di comunicazione tra tutti i componenti.
