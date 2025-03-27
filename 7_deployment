@@ -1,0 +1,52 @@
+DEPLOYMENT
+
+A k8s object that defines a desired state for a "ReplicaSet" (a set of replica Pods)
+The Deployment Controller seeks to maintain the desired state by creating, deleting and replacing Pods with new configuration
+
+
+"ReplicaSet" (a set of replica Pods) copie dello stesso pod
+pods che eseguono gli stessi container con le stesse configurazioni
+
+
+
+#è un oggetto che gestisce il rilascio  e l'aggiornamento di applicazioni in un cluster
+#Permette di creare e gestire più pod con stesse configurazioni (istanze dell’app), garantendo che funzionino sempre correttamente e aggiornandoli senza interruzioni
+
+
+kubectl create deployment deployment-name --image nginx replicas=3
+
+or with yaml manifest
+
+
+
+#deployment
+
+------------------
+
+3 ASPETTI DEL DEPLOYMENT'S DESIRED STATE 
+
+#REPLICAS 
+il numero di pod replica che il deployment crea e gestisce
+
+#SELECTOR 
+etichetta che serve a identificare i replica pod gestiti dal deployment
+
+#TEMPLATE
+modo/modello usato  per creare repliche di pod, quando il deployment crea repliche pod usa quel template con quelle configurazioni per creare i pod
+
+quasi identico allo yaml dei pod, 
+
+--------------------
+
+#use cases
+
+#1 to easily scale an application up and down by changing the number of replicas (increase/decrease replicas pods)  
+
+#2 perfom rolling updates to deploy a new software version
+  deployments possono essere usati per i rolling updates, aggiornamenti graduali di un'applicazione senza tempi di inattività, distribuendo una nuova versione del software in modo controllato (ad esempio se voglio aggiornare l'immagine dei container, la cambiamo e il deployment controller avvia i nuovi container automaticamente)
+
+#3 roll back to a previous software version
+   
+
+
+
