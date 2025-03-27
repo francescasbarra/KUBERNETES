@@ -8,7 +8,6 @@ The Deployment Controller seeks to maintain the desired state by creating, delet
 pods che eseguono gli stessi container con le stesse configurazioni
 
 
-
 #è un oggetto che gestisce il rilascio  e l'aggiornamento di applicazioni in un cluster
 #Permette di creare e gestire più pod con stesse configurazioni (istanze dell’app), garantendo che funzionino sempre correttamente e aggiornandoli senza interruzioni
 
@@ -16,7 +15,7 @@ pods che eseguono gli stessi container con le stesse configurazioni
 kubectl create deployment deployment-name --image nginx replicas=3
 
 or with yaml manifest
-
+(vedi a fine pagina)
 
 
 #deployment
@@ -47,6 +46,31 @@ quasi identico allo yaml dei pod,
 
 #3 roll back to a previous software version
    
+-------------------
+
+esempio manifest deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:  #specifiche del deployment 
+  replicas: 3
+  selector:
+#which pods are managed by the deployment, any pods that match the selector, even if not created with this deployment, will be managed by this deployment
+    matchLabels:
+      app: my-deployment
+#any pods with a label called "app" with value "my-deployment", we have to add the selector to the pod as well so that the pods for sure are managed by this deployment
+  template:
+    metadata:
+      labels:
+        app: my-deployment
+    spec:   #specifiche dei pod
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
 
 
 
