@@ -20,7 +20,23 @@ modificare il numero dei container che eseguono un applicazione
 #deployment scaling
 quando si cambia il numero di repliche si creano/eliminano in automatico i pods per rispettare il nuovo numero desiderato
 
+#COME CAMBIARE NUMERO DI REPLICHE
+
+#da file yaml
+ spec:
+   replicas: 3 (modificare il numero desiderato)
+
+e poi
+
+  kubectl apply -f file.yaml
+
+oppure
+   kubectl edit deployment nome.deployment (apre yaml più lungo e #appena viene salvato vengono applicate le modifiche al cluster, senza kubectl apply)
 
 
+------
+
+#da cli comando KUBECTL SCALE
+  kubectl scale deployment.v1.apps/my-deployment --replicas=5
 
 
