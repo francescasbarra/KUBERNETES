@@ -28,7 +28,22 @@ dà lo stato dell'ultimo rolling update
 oppure
 # un altro modo per effettuare ROLLING UPDATES
 kubectl set image deployment/my-deployment nome.container=versione nuova immagine  
-kubectl set image deployment/my-deployment nginx=nginx:broken
+kubectl set image deployment/my-deployment nginx=nginx:broken (--record per tenere traccia della modifica in "k describe" e nella HISTORY) 
+
+# kubectl rollout hystory deployment.v1.apps/my-deployment    #PER VISIONARE LA HISTORY DEI ROLLING UPDATES
+  deployment.apps/my-deployment
+  REVISION      CHANGE-CAUSE
+  1             <none>
+  2             <none>
+  3             kubectl set image deployment/my-deployment nginx=nginx:broken --recor=true
+
+
+
+
+# ROLL BACK per ripristinare lo stato precedente, annulla le modifiche
+  kubectl rollout undo deployment.v1.apps/my-deployment (annulla l'ultima modifica)
+  se aggiungo il flag --to-revision=2  (annulla le modifiche fino alla revisione 2)
+"output" deployments.app/my-deployment rolled back
 
 
 
