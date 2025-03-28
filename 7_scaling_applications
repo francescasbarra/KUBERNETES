@@ -31,12 +31,13 @@ e poi
   kubectl apply -f file.yaml
 
 oppure
-   kubectl edit deployment nome.deployment (apre yaml più lungo e #appena viene salvato vengono applicate le modifiche al cluster, senza kubectl apply)
+  "kubectl edit" deployment nome.deployment (apre yaml più lungo e #appena viene salvato vengono applicate le modifiche al cluster, senza kubectl apply)
+
 
 
 ------
 
 #da cli comando KUBECTL SCALE
-  kubectl scale deployment.v1.apps/my-deployment --replicas=5
+  "kubectl scale" deployment.v1.apps/my-deployment --replicas=5
 
 
