@@ -1,0 +1,34 @@
+# MANAGING ROLLING UPDATED WITH DEPLOYMENT
+
+# ROLLING UPDATES 
+permettono di effettuare aggiornamenti ai pod in modo controllato e graduale, sostituendo i vecchi pod con i nuovi senza incorrere in downtime, andare offline
+
+we roll out new pods and gradually remove the old ones until only the new ones remain.
+
+rolling updates si possono fare con la versione dei container e dei software e con le varie modifiche del template dei pod
+
+# ROLLBACK
+tornare indietro, ripristinare lo stato precedente
+se un aggiornamento al deployment causa problemi si può ritornare indietro allo stato di lavoro precedente ("roll back")
+
+i rollback vanno di pari passo con i rolling updates, invece di deployare la nuova versione la sostituiamo, la redeployamo, con la precedente   
+
+
+QUANDO FACCIAMO CAMBIAMENTI POSSIAMO ESEGUIRE IL SEGUENTE COMANDO PER CONTROLLARE CHE SIA ANDATO A BUON FINE
+dà lo stato dell'ultimo rolling update
+
+# kubectl rollout status deployment.v1.apps/my-deployment
+  deployment "my-deployment" successfully rolled out
+
+
+#quindi per fare cambiamenti si può usare 
+
+- vim deploy.yaml e poi applicare modifiche con "kubectl apply" sul file
+- "kubectl edit" per modificare il file yaml (le modifiche vengono applicate nonappena viene salvato il file) 
+oppure
+# un altro modo per effettuare ROLLING UPDATES
+kubectl set image deployment/my-deployment nome.container=versione nuova immagine  
+kubectl set image deployment/my-deployment nginx=nginx:broken
+
+
+
