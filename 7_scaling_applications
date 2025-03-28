@@ -1,0 +1,26 @@
+# SCALING APPLICATION WITH DEPLOYMENTS
+
+significa scalare un'applicazione usando i deployment in Kubernetes.
+
+In pratica, un deployment permette di aumentare o diminuire il numero di repliche (istanze) dei pod che eseguono l'applicazione, garantendo così più capacità per gestire il carico o riducendo le risorse quando non servono.
+
+Questo può essere fatto manualmente (kubectl scale) o automaticamente con un Horizontal Pod Autoscaler (HPA), che adatta il numero di pod in base al carico di lavoro.
+
+#BILANCIAMENTO DEL CARICO 
+significa ditribuire il lavoro, traffico, in modo uniforme tra + pod per garantire alta disponibilità e prestazioni ottimali.
+
+
+#SCALING 
+vuol dire dedicare più o meno risorse a un'applicazione in base alle esigenze
+aumentare/diminuire il numero di repliche dei pod del deployment 
+
+# horizontal scaling
+modificare il numero dei container che eseguono un applicazione
+
+#deployment scaling
+quando si cambia il numero di repliche si creano/eliminano in automatico i pods per rispettare il nuovo numero desiderato
+
+
+
+
+

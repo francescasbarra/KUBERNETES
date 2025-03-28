@@ -73,4 +73,5 @@ spec:  #specifiche del deployment
         - containerPort: 80
 
 
-
+Important se cancello un pod del deployment verrà cancellato ma sostituito da un nuovo pod per "rispettare" il numero di repliche impostato in fase di creazione
+per cancellare un pod del deployment dobbiamo modificare il numero di repliche o cancellare tutto il deployment (oppure vedere altre funzioni per cancellare specificatamente quel pod) 
