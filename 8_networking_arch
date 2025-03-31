@@ -1,4 +1,50 @@
 # K8S NETWORKING ARCHITECTURAL OVERVIEW
 
+# 1 KUBERNETES NETWORK MODEL
+
+# 2 NETWORK MODEL ARCHITECTURE
+
+-----
+
+# 1 KUBERNETES NETWORK MODEL
+set di standard che definiscono come si comporta il networking tra i pods
+ci sono diverse implementazioni in questo modello tra cui "calico network plugin"
+
+- definisce come i pod comunicano tra loro, indipendentemente dal nodo sui quali sono eseguiti
+
+# ogni POD ha un suo ip univoco nel cluster, anche se si trovano su nodi diversi, proprio perchè possono comunicare tra loro
+ciò crea una "virtual network" 
 
 
+----------
+
+# 1 CNI plugins
+  sono tipi di network plugin che forniscono connettività di rete tra i pods secondo gli standard definiti nel modello di rete kubernetes
+
+
+# 2 Selecting a Network Plugin
+  come selezionare i network plugin migliori in base alle esigenze, alle situazioni specifiche
+  consultare la documentazione k8s per avere la lista dei plugin disponibili
+in questo corso viene usato "CALICO" 
+
+
+# 3 Installing Network Plugin
+  ogni plugin ha un suo processo di installazione
+
+i nodi kubernetes rimangono "not ready" finchè un network plugin non viene installato, non si può eseguire pod altrimenti
+
+-------------
+
+
+# UNDERSTANDING K8S DNS
+
+1 DNS in k8s
+2 Podman Domain Names
+
+# DNS in K8S
+  la rete virtuale di k8s usa un DNS (Domain Name System) per permettere ai Pod di individiare altri Pod e Servizi usando nomi di dominio invece di indirizzi IP
+
+  
+
+
+  
