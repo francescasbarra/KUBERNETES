@@ -36,3 +36,6 @@ spec:
    image: redis
  - name: couchbase
    image: couchbase
+
+
+IMPORTANT SI POSSONO CREARE PIù OGGETTI NELLO STESSO FILE YAML DIVIDENDOLI CON 3 TRATTINI ---
