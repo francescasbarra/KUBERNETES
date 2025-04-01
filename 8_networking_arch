@@ -57,6 +57,52 @@ i nodi kubernetes rimangono "not ready" finchè un network plugin non viene inst
 
 pod domain names diventa + utile quando si parla di servizi
 
+-------------
+
+ESEMPIO 
+
+# creo 2 pod all'interno dello stesso yaml (per separare gli oggetti nello stesso file uso --- )
+  kubectl get pod nginx-dnstest -o wide
+NAME            READY   STATUS    RESTARTS   AGE   IP                NODE       NOMINATED NODE   READINESS GATES
+nginx-dnstest   1/1     Running   0          35s   192.168.133.206   worker-2   <none>           <none>
+
+# uso l'ip del pod nginx-dnstest per eseguire una curl ad esso all'interno del primo pod, busybox  
+  kubectl exec busybox-dnstest -- curl 192.168.133.206
+
+---
+
+# kubectl get pod -n kube-system    (lì si troveranno componenti DNS, i server)
+
+francesca@ubuntu:~$ k get pod -n kube-system 
+NAME                                       READY   STATUS    RESTARTS      AGE
+calico-kube-controllers-658d97c59c-599mn   1/1     Running   22 (8h ago)   28d
+calico-node-8rdv4                          1/1     Running   23 (8h ago)   28d
+calico-node-swgrz                          1/1     Running   6 (8h ago)    10d
+calico-node-z27wv                          1/1     Running   22 (8h ago)   28d
+"coredns-5dd5756b68-pgkrn"                   1/1     Running   22 (8h ago)   28d
+"coredns-5dd5756b68-rbvzn"                   1/1     Running   22 (8h ago)   28d
+etcd-ubuntu                                1/1     Running   75 (8h ago)   28d
+kube-apiserver-ubuntu                      1/1     Running   70 (8h ago)   28d
+kube-controller-manager-ubuntu             1/1     Running   32 (8h ago)   28d
+kube-proxy-c9shl                           1/1     Running   23 (8h ago)   28d
+kube-proxy-lwkw2                           1/1     Running   23 (8h ago)   28d
+kube-proxy-mdxt2                           1/1     Running   6 (8h ago)    10d
+kube-scheduler-ubuntu                      1/1     Running   32 (8h ago)   28d
+metrics-server-54d55fc76c-m6kpt            1/1     Running   28 (8h ago)   12d
 
 
-  
+--------------
+
+# kubectl get service -n kube-system  (qui possiamo trovare il servizio kube-dns)
+
+NAME               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE
+"kube-dns"         ClusterIP   10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP   28d
+metrics-server     ClusterIP   10.109.61.219   <none>        443/TCP                  12d
+
+
+-------------
+
+# kubectl exec busybox-dnstest -- nslookup 192-168-133-206.francesca.pod.cluster.local
+
+"nslookup" serve a cercare l'indirizzo IP associato a un nome di dominio
+
