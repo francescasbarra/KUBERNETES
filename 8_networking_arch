@@ -31,7 +31,14 @@ in questo corso viene usato "CALICO"
 # 3 Installing Network Plugin
   ogni plugin ha un suo processo di installazione
 
-i nodi kubernetes rimangono "not ready" finchè un network plugin non viene installato, non si può eseguire pod altrimenti
+IMPORTANT "i nodi kubernetes rimangono "not ready" finchè un network plugin non viene installato, non si può eseguire pod altrimenti"
+
+kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+
+per installare il network plug in "calico"
+
+
+
 
 -------------
 
@@ -105,4 +112,8 @@ metrics-server     ClusterIP   10.109.61.219   <none>        443/TCP            
 # kubectl exec busybox-dnstest -- nslookup 192-168-133-206.francesca.pod.cluster.local
 
 "nslookup" serve a cercare l'indirizzo IP associato a un nome di dominio
+
+-----
+
+
 
