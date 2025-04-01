@@ -44,7 +44,9 @@ i nodi kubernetes rimangono "not ready" finchè un network plugin non viene inst
 # DNS in K8S
   la rete virtuale di k8s usa un DNS (Domain Name System) per permettere ai Pod di individiare altri Pod e Servizi usando nomi di dominio invece di indirizzi IP
 
-  
+  Il DNS è in running come "servizio" (come un pod)  all'interno del cluster, di solito si trova nel namespace "kube-system"
+# kubeadm clusters usano CoreDNS
+
 
 
   
