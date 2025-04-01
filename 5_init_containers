@@ -1,3 +1,30 @@
-INIT CONTAINERS
+# INIT CONTAINERS
+Init container are containers that run once during startup process of a pod.
+A pod can have any number of init containers and they run once once (in order) to completion.
+
 
 these containers are not the ones of your main application
+
+# Init containers run to completion before the next init contaiener or app containers start
+# App containers will start up only once all init containers have completed
+
+Used to perform a variety of startup tasks.
+#They can contain and use software and setup scripts that are not needed by your main container.
+
+Useful in keeping the main containers lighter and more secure by offloading startup tasks to a separate container.
+
+USE CASES
+
+# to cause a pod to wait for naother k8s resource to be created before finishing startup
+  ex. you can use an init container to pause startup until a service or another pod become available
+
+# to perform sensitive startup steps securely outside of app containers
+  ex. se sono necessarie delle azioni che coinvolgono dati sensibili si eseguono in uninit container in mode che, se il container principale risulta compromesso, non verranno compromessi i dati sensibili
+
+# to populate data into a shared volume at startup 
+  if you need to output some data to a volume your main container could read that data from that volume once it starts up 
+
+# to communicate with another external service
+
+
+

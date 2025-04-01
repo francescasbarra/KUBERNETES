@@ -49,9 +49,13 @@ i nodi kubernetes rimangono "not ready" finchè un network plugin non viene inst
 
 -------------
 
-# POD NOMAIN NAMES
+# POD DOMAIN NAMES
   A tutti i pod del kubeadm cluster viene assegnato automaticamente nome di dominio con la seguente forma:
 # <pod-ip-address>.<namespace-name>.<pod>.<cluster.local>
+   pod name? 
+#  192-168-10-100.default.pod.cluster.local
+
+pod domain names diventa + utile quando si parla di servizi
 
 
 
