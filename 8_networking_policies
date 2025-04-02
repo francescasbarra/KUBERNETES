@@ -24,11 +24,25 @@ metadata:
 in questo esempio la policy si applica a tutti i pod del namespace
 
 Important di default i pod sono considerati non isolati e completamente aperti a tutta la comunicazione
-
-
+# MA se una network policy viene applicata a un pod, questo è considerato isolato e aperto solo alle comunicazioni permesse dalla policy
 
 
 -------
 
-# 
+# INGRESS/EGRESS (traffico in entrata/uscita)
+
+Una network policy può essere applicata al traffico in ingresso, uscita o entrambi.
+
+Ingress, network traffic da un'altra fonte al pod
+Egress, dal pod all'esterno 
  
+------
+
+# FROM AND TO SELECTORS
+relativi a ingresso/uscita
+definiscono il traffico permesso dalla policy
+#FROM SELECTOR seleziona il traffico in ingresso
+#TO SELECTOR seleziona il traffico in uscita
+
+
+
