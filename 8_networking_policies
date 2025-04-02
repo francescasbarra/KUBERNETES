@@ -3,6 +3,7 @@
 # "Network Policy" è un oggetto che permette di controllare il flusso della comunicazione di rete da/per i pods
 
 permette di costruire un cluster + sicuro mantenendo i pod isolati dal traffico di cui non hanno bisogno
+per impedire traffico non autorizzato/inaspettato
 
 # COMPONENTI
 
