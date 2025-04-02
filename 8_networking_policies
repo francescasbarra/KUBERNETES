@@ -45,4 +45,76 @@ definiscono il traffico permesso dalla policy
 #TO SELECTOR seleziona il traffico in uscita
 
 
+spec:
+  ingress:
+  - from:
+    ...
+  egress:
+  - to:
+    ...
+
+# from/to selector
+
+# PodSelector
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: db
+
+# NamespaceSelector
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            app: db
+
+# IpBlock
+  spec:
+    ingress:
+    - from:
+      - ipBlock:
+          cidr: 172.187.0/16  # seleziona un range di IP ai quali permettere il traffico, in questo caso host da 0 a 16
+
+--------
+
+
+# PORTS
+  specifica una o + porte che permettono il traffico
+  
+  spec:
+    ingress:
+    - from:
+      ports:
+        - protocol: TCP
+          port: 80
+
+# in questo caso stiamo permettendo il traffico in ENTRATA solo sulla porta 80 
+# il traffico è permesso solo se corrispondono entrambi gli elementi, porta e una delle regole  from/to 
+
+-----------
+
+# NETWORK POLICY YAML
+
+esempio
+
+apiVersion: v1
+kind: NetworkPolicy
+metadata:
+  name: my-networkpolicy
+  namespace: lab
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx
+  policyTypes:
+  - Ingress
+  - Egress
+
+# in questo caso le policy si applicano sia al traffico in entrata che in uscita, ma non c'è nessuna regola specificata quindi niente è permesso (tranne ciò che sarà poi specificato) con from/to selector
+
+kubectl get networkpolicies #per elencare le network policies
+
 
