@@ -13,14 +13,15 @@ ci sono diverse implementazioni in questo modello tra cui "calico network plugin
 - definisce come i pod comunicano tra loro, indipendentemente dal nodo sui quali sono eseguiti
 
 # ogni POD ha un suo ip univoco nel cluster, anche se si trovano su nodi diversi, proprio perchè possono comunicare tra loro
-ciò crea una "virtual network" 
+ciò crea una "virtual network" per l'intero cluster 
 
 
 ----------
 
 # 1 CNI plugins
   sono tipi di network plugin che forniscono connettività di rete tra i pods secondo gli standard definiti nel modello di rete kubernetes
-
+"CNI" Container Network Interface, standard per gestire la connettività di rete nei container.
+CNI plugin è un modulo che implementa questo standard per configurare e gestire le reti dei container, assegnando IP, configurando il routing e applicando policy di rete.
 
 # 2 Selecting a Network Plugin
   come selezionare i network plugin migliori in base alle esigenze, alle situazioni specifiche

@@ -1,0 +1,58 @@
+SERVICES
+
+# I "services" k8s forniscono un modo per esporre un'applicazione in esecuzione come un insieme di pod
+forniscono un metodo astratto per consentire ai client di accedere alle app senza dover conoscere i pod dell'applicazione
+# Un service è un intermediario tra client e pod
+
+# Service routing
+  i clienti fanno richieste al Service che indirizza, instrada (route), il traffico ai suoi pod in modo bilanciato 
+
+----------------------------------------------------
+# pod    pod   pod           ognuno dei pod rappresenta un ENDPOINT per il service
+
+
+#     service        <-----  client 
+                             fa richiesta al service
+indirizza il traffico 
+e lo bilancia tra i pod
+
+----------------------------------------------------
+
+# ENDPOINTS
+sono le entità di backend a cui i servizi instradano il traffico, pod o altri servizi che ricevono richieste dal service.
+Per un service che instrada il traffico a + pod, ogni pod avrà un "endpoint" associato al service
+
+#  un modo per determinare verso quale pod il service sta instradando il traffico è vedere l'endpoint del service
+
+---------
+
+USING K8S SERVICES 
+
+# SERVICE TYPES
+
+Ogni servizio ha un "type" e il 
+#Service Type definisce come e dove il servizio esporrà l'applicazione
+
+4 SERVICE TYPE
+
+# 1 Cluster Ip 
+per l'esposizione dei pod all'interno del cluster
+# 2 NodePort
+per esporre i pod in rete
+# 3 LoadBalancer
+# 4 ExternalName (outside the scope of cka)
+
+------------- 
+
+# CLUSTER IP SERVICE
+espone l'applicazione all'interno del cluster
+da usare quando i client sono gli altri pod del cluster
+
+# NodePort Service
+espone i pod all'esterno della rete del cluster
+da usare quando applicazioni o utenti accedono dall'esterno del cluster alla tua applicazione
+
+# LoadBalancer Service 
+espone le applicazioni anche all'esterno della rete del cluster, ma per farlo usano un bilanciatore di carico cloud esterno.
+questo servizio funziona solo con piattaforme cloud che includono funzionalità del bilanciamento di carico
+
