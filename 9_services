@@ -56,3 +56,27 @@ da usare quando applicazioni o utenti accedono dall'esterno del cluster alla tua
 espone le applicazioni anche all'esterno della rete del cluster, ma per farlo usano un bilanciatore di carico cloud esterno.
 questo servizio funziona solo con piattaforme cloud che includono funzionalità del bilanciamento di carico
 
+# ExternalName 
+
+------------------
+
+esempio
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-clusterip
+spec:
+  type: ClusterIP  # se non si specifica il tipo va di default ClusterIp
+  selector:
+    app: svc-example
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+
+-----------------
+
+
+
