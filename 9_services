@@ -69,14 +69,27 @@ metadata:
 spec:
   type: ClusterIP  # se non si specifica il tipo va di default ClusterIp
   selector:
-    app: svc-example
+    app: svc-example  # determina a quali pod il servizio indirizza il traffico/ il selector dei pod era indicato nel template del deployment
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 80  # si possono indicare anche + porte, i client che comunicano col service useranno la porta 80
+    targetPort: 80    # determina la porta che il service sta indirizzando ai backend pod, la porta su cui ascoltano i pod
+ 
+    nodePort: 30080  #si aggiunge dopo targetport per i service nodeport, è la porta che i pod ascolteranno esternamente (se non si specifica, k8s ne assegna una di default)
 
 
 -----------------
 
+# COME VEDERE GLI ENDPOINTS DEI SERVICE (I POD)
 
+kubectl get endpoints svc-clusterip  # kubectl get endpoints nome.servizio 
+NAME            ENDPOINTS                                                 AGE
+svc-clusterip   192.168.133.227:80,192.168.226.68:80,192.168.243.224:80   118s
 
+escono gli indirizzi IP dei pod con la porta definita
+
+# UNA VOLTA CREATO IL SERVIZIO DOBBIAMO TESTARLO ALL'INTERNO DEL CLUSTER, DOBBIAMO CREARE UN POD CHE COMUNICHI CON IL SERVIZIO
+
+FACCIAMO UN POD PER TESTARE IL FUNZIONAMENTO
+
+-------------
