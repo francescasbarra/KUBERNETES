@@ -1,0 +1,48 @@
+# SERVICE DNS NAMES
+
+il DNS k8s (Domanin Name System) assegna nomi DNS ai servizi, permettendo alle applicazioni all'interno del cluster di individuarli in modo semplice
+
+# FQDN di un servizio (Fully Qualified Domain Name)
+<service-name>.<namespace-name>.svc.<cluster.domain>.example
+
+# default cluster domain è "cluster.local"
+
+
+il DNS in k8s è un pod "core-dns"
+
+
+kubectl exec pod-svc-test -- curl 10.97.216.22
+
+
+
+
+# SERVICE DNS E NAMESPACE
+
+FQDN di un servizio può essere usato per raggiungere il servizio da qualsiasi namespace nel cluster
+
+myservice.mynamespace.svc.cluster.local
+
+i pod che si trovano nello stesso namespace possono anche solo usare il nome del servizio
+
+------------------
+
+# MANAGING ACCESS FROM OUTSIDE WITH KUBERNETES INGRESS
+#
+# INGRESS
+# INGRESS CONTROLLERS
+# ROUTING TO A SERVICE
+# ROUTING TO A SERVICE WITH A NAMED PORT
+
+
+# INGRESS 
+è un oggetto che gestisce gli accessi esterni ai servizi nel cluster
+Un 'Ingress' fornisce + funzionalità rispetto a un service NodePort, come la terminazione SSL, il bilanciamento del carico avanzato o l'hosting virtuale basato sul nome
+
+per utilizzare gli ingressi è necessario installare gli 'INGRESS CONTROLLERS'
+ci sono diversi tipi di ingress controllers, ognuno dei quali implementa un metodo diverso per fornire accesso esterno ai servizi
+
+# ROUTING TO A SERVICE
+Gli ingressi definiscono una serie di 'ROUTING RULES' (regole di instradamento).
+Le proprietà di una regola di instradamento determinano a quali richieste si applica.
+
+

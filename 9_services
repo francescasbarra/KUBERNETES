@@ -93,3 +93,26 @@ escono gli indirizzi IP dei pod con la porta definita
 FACCIAMO UN POD PER TESTARE IL FUNZIONAMENTO
 
 -------------
+
+# NSLOOKUP
+
+Il comando nslookup (Name Server Lookup) serve per interrogare i server DNS e ottenere informazioni sulla risoluzione dei nomi di dominio, ovvero tradurre un nome host in indirizzo IP (e viceversa).
+
+nslookup google.com
+
+Server:   192.168.1.1
+Address:  192.168.1.1#53
+
+Non-authoritative answer:
+Name:    google.com
+Address: 142.250.180.206
+
+Server: indica quale server DNS hai usato per fare la richiesta.
+
+Address: è l'IP associato al dominio.
+
+Non-authoritative answer: significa che il server ti ha fornito una risposta che ha preso in prestito da un altro DNS (cache o forwarding).
+
+---------------
+
+
