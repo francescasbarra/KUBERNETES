@@ -45,4 +45,53 @@ ci sono diversi tipi di ingress controllers, ognuno dei quali implementa un meto
 Gli ingressi definiscono una serie di 'ROUTING RULES' (regole di instradamento).
 Le proprietà di una regola di instradamento determinano a quali richieste si applica.
 
+Ogni regola ha un insieme di percorsi 'path', ciascuno con un backend.
+Le  richieste che corrispondono a un determinato percorso verranno instradate al backend associato.
+In questo esempio, una richiesta a http://<some-endpoint>/somepath verrebbe instradata sulla porta 80 del servizio my-service
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /somepath
+        pathType: Prefix
+        backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+
+-----------
+
+backend che sta dietro all'ingress è il service
+
+
+----------
+
+# ROUTING TO A SERVICE WITH A NAMED PORT
+se un servizio usa una 'named port', un ingress può anche usare il nome della porta per scegliere la porta verso la quale instradare
+
+# invece di port: number: 80
+# si aggiunge port: name: nome.porta
+
+(nello yaml del service si inserirà il nome della porta)
+...
+ports:
+- name: web
+  protocol: TCP
+  port: 80
+  targetPort: 8080
+
+
+-----------
+
+
+
+
+
+
 
